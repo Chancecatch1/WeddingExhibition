@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>솔과 명준의 결혼전시 안내</title>
+    <link rel="stylesheet" href="https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/easygpt/default.css">
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <style>
+        /* 꾸미기 */
+        .navbar {
+            font-size: 1.25rem;
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+        }
+
+        * {
+          font-family: 'Gothic A1', sans-serif;  /* 전체 글꼴을 고딕체로 설정 */
+        }
+
+        /* 수정된 CSS */
+        .exhibition-title {
+          font-size: 2rem;  /* 텍스트 크기 조정 */
+          font-weight: bold;  /* 글자 두께 강조 */
+          margin-top: 3rem;  /* 상단 마진 추가 */
+          margin-bottom: 2rem;  /* 포스터와의 거리 조정 */
+        }
+
+        .exhibition-img {
+          width: 80%;  /* 너비를 80%로 설정 */
+          height: auto;  /* 높이를 자동으로 설정 (너비에 맞춰 조절) */
+        }
+
+        .exhibition-details {
+          font-size: 1.3rem;  /* 텍스트 크기 조정 */
+        }
+
+        .exhibition-details li {
+        margin-bottom: 1.5rem; /* 하단 마진 추가 */
+        }
+
+        .nav-item {
+          margin-left: 3.5rem;  /* 좌측 마진 추가 */
+          margin-right: 3.5rem;  /* 우측 마진 추가 */
+        }
+
+        .detail-img {
+          width: 67%;  /* 이미지 너비를 20%로 조정 */
+          height: auto;  /* 이미지 높이를 자동으로 조정 (너비에 맞춰 조절) */
+        }
+
+    </style>
+</head>
+
+<body>
+    <!-- Exhibition Section -->
+    <div class="container my-4" id="exhibitions">
+      <div class="row align-items-center">
+          <div class="col-lg-4 offset-lg-2">
+              <h2 class="exhibition-title">솔과 명준의 결혼전시</h2>
+              <img src="images\poster.jpeg" class="img-fluid exhibition-img">
+          </div>
+          <div class="col-lg-6 exhibition-details">
+                  <li><strong>장소</strong> 구캔갤러리</li>
+                  <li><strong>일정</strong> 2023년 7월 8일 토요일</li>
+                  <li><strong>관람시간</strong> 30분</li>
+                  <li><strong>관람연령</strong> 전체관람가</li>
+              </ul>
+          </div>
+      </div>
+    </div>
+  
+    <!-- Additional Sections -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container">
+        <div class="collapse navbar-collapse d-flex justify-content-around" id="navbarNav">
+          <ul class="navbar-nav mx-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#" onclick="showDetailImage()">상세정보</a>
+            </li>            
+            <li class="nav-item">
+              <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#messageModal">작가에게 한마디</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" onclick="showDonationInfo()">후원계좌</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" onclick="event.preventDefault(); showQaSection();">Q&A</a>
+            </li>            
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Donation Information -->
+    <div id="donationInfo" style="display: none;">
+      <div class="container my-4">
+        <div class="row">
+          <div class="col-lg-6 offset-lg-3">
+            <h4>후원계좌</h4>
+            <p>작가 1 계좌번호: XXX-XXXX-XXXX</p>
+            <p>작가 2 계좌번호: XXX-XXXX-XXXX</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Message Modal -->
+    <div class="modal fade" id="messageModal" tabindex="-1" aria-labelledby="messageModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="messageModalLabel">작가에게 한마디 남기기</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form>
+              <div class="mb-3">
+                <label for="nameInput" class="form-label">이름</label>
+                <input type="text" class="form-control" id="nameInput" placeholder="이름을 입력하세요">
+              </div>
+              <div class="mb-3">
+                <label for="messageInput" class="form-label">메시지</label>
+                <textarea class="form-control" id="messageInput" rows="3" placeholder="메시지를 입력하세요"></textarea>
+              </div>
+            </form>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+            <button type="button" class="btn btn-primary">전송</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Q&A Section -->
+    <div id="qaSection" style="display: none;">
+      <div class="container my-4">
+        <div class="row">
+          <div class="col-lg-6 offset-lg-3">
+            <h4>Q&A</h4>
+            <div id="qaBoard">
+              <!-- Q&A posts will be dynamically added here -->
+            </div>
+            <form id="qaForm">
+              <div class="mb-3">
+                <label for="postInput" class="form-label">게시글</label>
+                <textarea class="form-control" id="postInput" rows="3" placeholder="게시글을 입력하세요"></textarea>
+              </div>
+              <button type="submit" class="btn btn-primary">전송</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function showDonationInfo() {
+        var donationInfo = document.getElementById("donationInfo");
+        var detailImage = document.querySelector(".detail-img");
+        var qaSection = document.getElementById("qaSection");
+    
+        donationInfo.style.display = "block"; // show donation info
+        detailImage.style.display = "none"; // hide the image
+        qaSection.style.display = "none"; // hide the Q&A section
+      }
+    
+      function showDetailImage() {
+        var donationInfo = document.getElementById("donationInfo");
+        var detailImage = document.querySelector(".detail-img");
+        var qaSection = document.getElementById("qaSection");
+    
+        donationInfo.style.display = "none"; // hide donation info
+        detailImage.style.display = "block"; // show the image
+        qaSection.style.display = "none"; // hide the Q&A section
+      }
+    
+      function showQaSection() {
+        var donationInfo = document.getElementById("donationInfo");
+        var detailImage = document.querySelector(".detail-img");
+        var qaSection = document.getElementById("qaSection");
+    
+        donationInfo.style.display = "none"; // hide donation info
+        detailImage.style.display = "none"; // hide the image
+        qaSection.style.display = "block"; // show the Q&A section
+      }
+    </script>    
+
+    
+      <!-- Image under Additional Sections -->
+      <div class="container my-4 d-flex justify-content-center">
+        <img src="images/web_long.jpeg" class="img-fluid detail-img" alt="Detailed Image">
+      </div>
+
+
+  </body>
+  
+</html>
