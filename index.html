@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ticket Sales</title>
+    <link rel="stylesheet" href="https://s3.ap-northeast-2.amazonaws.com/materials.spartacodingclub.kr/easygpt/default.css">
+    <link href="https://fonts.googleapis.com/css2?family=Gothic+A1:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+        crossorigin="anonymous"></script>
+    <style>
+        /* 꾸미기 */
+        hr {
+            max-width: 95%;
+            margin: 3rem auto;
+        }
+
+        .navbar {
+            font-size: 1.25rem;
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+
+        * {
+          font-family: 'Gothic A1', sans-serif;  /* 전체 글꼴을 고딕체로 설정 */
+        }
+
+        /* 수정된 CSS */
+        .exhibition-title {
+          font-size: 2.5rem;  /* 텍스트 크기 조정 */
+          font-weight: bold;  /* 글자 두께 강조 */
+          margin-top: 3.5rem;  /* 상단 마진 추가 */
+          margin-bottom: 2rem;  /* 포스터와의 거리 조정 */
+        }
+
+        .exhibition-img {
+          width: 80%;  /* 너비를 80%로 설정 */
+          height: auto;  /* 높이를 자동으로 설정 (너비에 맞춰 조절) */
+        }
+
+        .exhibition-details {
+          font-size: 1.5rem;  /* 텍스트 크기 조정 */
+        }
+
+        .exhibition-details li {
+        margin-bottom: 1.5rem; /* 하단 마진 추가 */
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Exhibition Section -->
+    <div class="container my-4" id="exhibitions">
+      <h2 class="exhibition-title">솔과 명준의 결혼전시</h2>
+      <div class="row">
+          <div class="col-lg-4">
+              <img src="images\poster.jpeg" class="img-fluid exhibition-img">
+          </div>
+          <div class="col-lg-8 exhibition-details">
+              <ul>
+                  <li><strong>장소</strong> 구캔갤러리</li>
+                  <li><strong>일정</strong> 2023년 7월 8일 토일</li>
+                  <li><strong>관람시간</strong> 30분</li>
+                  <li><strong>관람연령</strong> 전체관람가</li>
+              </ul>
+          </div>
+      </div>
+  </div>
+  
+    <!-- Additional Sections -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+              <li class="nav-item">
+                <a class="nav-link" href="#">상세정보</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">기대평</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">후원계좌</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#">Q&A</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- Image under Additional Sections -->
+        <div class="container my-4">
+            <img src="images/web_long.jpeg" class="img-fluid" alt="Detailed Image">
+        </div>
+  </body>
+  
+</html>
